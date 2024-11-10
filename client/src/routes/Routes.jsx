@@ -37,4 +37,10 @@ export const router = createBrowserRouter([
         // },
       ],
     },
+    {
+      future: {
+        v7_skipActionErrorRevalidation: true, // Opt-in to skip revalidation after 4xx/5xx errors
+        v7_partialHydration: true,
+      },
+    }
   ]);
