@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.active{
+    @apply text-[#008156]
+  }
+
 .react-tabs__tab--selected {
     color: #272343;
     border: #008156;

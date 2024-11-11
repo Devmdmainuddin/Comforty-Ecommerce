@@ -1,9 +1,15 @@
-import React from 'react';
+
+import Bredcumb from '../../components/shared/Bredcumb';
+import Container from '../../components/shared/Container';
 
 const Contact = () => {
     return (
         <div>
-            contact
+            <Bredcumb />
+            <Container>
+                <h2>contact page</h2>
+            </Container>
+
         </div>
     );
 };

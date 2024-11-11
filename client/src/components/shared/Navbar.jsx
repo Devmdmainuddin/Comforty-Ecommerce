@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Container from "./Container";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Image from "./Image";
 import { TfiHelpAlt } from "react-icons/tfi";
 import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
@@ -11,7 +11,7 @@ import { FiMenu } from "react-icons/fi";
 const Navbar = () => {
 
     const [showMenu, setShowMenu] = useState(false);
-    const [proOpen, setProOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
 
     const toggleMenu = () => {
@@ -103,27 +103,37 @@ const Navbar = () => {
                 </Container>
             </div>
 
-            <div className="relative z-10 shadow-md w-full  duration-300 py-[14px]" >
+            <div className="relative z-10 shadow-md w-full  duration-300 py-[14px] " >
                 <Container className=''>
 
-                    <div className="flex items-center justify-between ">
-                        <div className="flex gap-8 items-center">
-                            <div className="flex gap-2 items-center border border-[#e1e3e6] rounded-[6px] py-4 px-6">
+                    <div className="flex items-center justify-between relative ">
+                        <div className="flex gap-8 items-center ">
+                            <div onClick={() => setIsOpen(!isOpen)} className="flex gap-2 items-center border border-[#e1e3e6] rounded-[6px] py-4 px-6">
                                 <span><FiMenu /></span>
                                 <h3>All Categories</h3>
                             </div>
-
+                            
                             <nav className="hidden md:inline-block">
                                 <ul className={`flex gap-8 items-center`}>
                                     {links.map((link, index) => (
                                         <li key={index}>
-                                            <Link to={link.path}>{link.title}</Link>
+                                            <NavLink to={link.path}>{link.title}</NavLink>
                                         </li>
                                     ))}
                                 </ul>
                             </nav>
                         </div>
-
+                        {/* {isOpen &&  */}
+                        <nav className={` mt-4 absolute transition-all ease-in-out duration-500 left-0 bg-[#DFE3E6] w-[225px] ${isOpen? 'top-full opacity-100 visible':'-top-[1000px] opacity-0 invisible'}`}>
+                                <ul className={`flex flex-col gap-3  p-4`}>
+                                    {links.map((link, index) => (
+                                        <li key={index}>
+                                            <NavLink to={link.path}>{link.title}</NavLink>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </nav>
+                            {/* // } */}
                         {/* Profile */}
                         <div className=" hidden md:inline-block">
                             <p className="text-[#636270] font-inter text-[14px] font-normal  ">Contact: <span className="text-[#272343] ">(808) 555-0111</span></p>

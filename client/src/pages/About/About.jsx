@@ -1,8 +1,8 @@
-
+import Bredcumb from '../../components/shared/Bredcumb'
 const About = () => {
     return (
         <div>
-            about
+    <Bredcumb/>
         </div>
     );
 };
