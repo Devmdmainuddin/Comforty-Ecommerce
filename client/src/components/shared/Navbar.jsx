@@ -12,7 +12,7 @@ const Navbar = () => {
 
     const [showMenu, setShowMenu] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-
+    const [proOpen, setProOpen] = useState(false);
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
@@ -43,7 +43,7 @@ const Navbar = () => {
     useEffect(() => {
         function resize() {
             if (window.innerWidth < 767.99) {
-                setProOpen(false)
+
                 setShowMenu(false)
             }
         }
@@ -83,7 +83,7 @@ const Navbar = () => {
                             <span className="absolute top-1/2 -translate-y-1/2 right-5"><CiSearch className="text-[#272343]" /></span>
                         </div>
 
-                        <div className="icons md:flex gap-6 items-center hidden">
+                        <div className="icons md:flex gap-6 items-center hidden relative">
                             <div className="icon flex items-center w-[120px] h-[44px] bg-white rounded-[8px] gap-3 justify-center ">
                                 <span className="text-[#272343] flex items-center gap-2 "><FaCartArrowDown /> Cart</span>
                                 <div>
@@ -95,9 +95,18 @@ const Navbar = () => {
                                 <span className="text-[#272343]"><FaRegHeart /></span>
 
                             </div>
-                            <div className="icon w-[44px] h-[44px] bg-white rounded-[8px] flex justify-center items-center">
+                            <div onClick={() => setProOpen(!proOpen)} className="icon w-[44px] h-[44px] bg-white rounded-[8px] flex justify-center items-center">
                                 <span className="text-[#272343]"><FaRegUser /></span>
                             </div>
+                            {proOpen && (
+                                <div className=" absolute z-50 top-full right-3 translate-y-6">
+                                    <div className=" block  bg-[#ffffff] ">
+                                        <div className="button flex flex-col  w-full">
+                                            <Link onClick={() => setProOpen(!proOpen)} to='/login' className="py-4 px-8  bg-white  w-full  text-[#272343] font-inter  font-semibold leading-[1.1] tracking-normal text-center border  uppercase">login</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </Container>
@@ -112,7 +121,7 @@ const Navbar = () => {
                                 <span><FiMenu /></span>
                                 <h3>All Categories</h3>
                             </div>
-                            
+
                             <nav className="hidden md:inline-block">
                                 <ul className={`flex gap-8 items-center`}>
                                     {links.map((link, index) => (
@@ -124,16 +133,16 @@ const Navbar = () => {
                             </nav>
                         </div>
                         {/* {isOpen &&  */}
-                        <nav className={` mt-4 absolute transition-all ease-in-out duration-500 left-0 bg-[#DFE3E6] w-[225px] ${isOpen? 'top-full opacity-100 visible':'-top-[1000px] opacity-0 invisible'}`}>
-                                <ul className={`flex flex-col gap-3  p-4`}>
-                                    {links.map((link, index) => (
-                                        <li key={index}>
-                                            <NavLink to={link.path}>{link.title}</NavLink>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </nav>
-                            {/* // } */}
+                        <nav className={` mt-4 absolute transition-all ease-in-out duration-500 left-0 bg-[#DFE3E6] w-[225px] ${isOpen ? 'top-full opacity-100 visible' : '-top-[1000px] opacity-0 invisible'}`}>
+                            <ul className={`flex flex-col gap-3  p-4`}>
+                                {links.map((link, index) => (
+                                    <li key={index}>
+                                        <NavLink to={link.path}>{link.title}</NavLink>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
+                        {/* // } */}
                         {/* Profile */}
                         <div className=" hidden md:inline-block">
                             <p className="text-[#636270] font-inter text-[14px] font-normal  ">Contact: <span className="text-[#272343] ">(808) 555-0111</span></p>

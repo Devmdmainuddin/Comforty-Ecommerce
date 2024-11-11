@@ -6,6 +6,7 @@ import Error from "../pages/Error/Error";
 import Main from '../layout/Main'
 import Shop from "../pages/Shop/Shop";
 import Product from "../pages/Product/Product";
+import Login from "../pages/Auth/Login";
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -32,10 +33,10 @@ export const router = createBrowserRouter([
           path: "/contact",
           element: <Contact />,
         },
-        // {
-        //   path: "/login",
-        //   element: <Login />,
-        // },
+        {
+          path: "/login",
+          element: <Login />,
+        },
         // {
         //   path: "/register",
         //   element: <Registation />,
