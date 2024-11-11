@@ -3,12 +3,45 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
+import {Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import Container from '../shared/Container';
 import Image from '../shared/Image';
 import '../../style/swipers.css'
 const Hero = () => {
+    const hero=[
+        {
+            image: '/hero.png',
+            title: 'Best Furniture Collection for your interior'
+        },
+        {
+            image: '/hero.png',
+            title: 'Flash Sale! Get the Best Deals Before They’re Gone!',
+            sortDescaption:'Welcome to chairy'
+        },
+        {
+            image: '/hero.png',
+            title: 'Save More, Shop More: Exclusive Discounts Inside!',
+            sortDescaption:'Welcome to chairy'
+        },
+        {
+            image: '/hero.png',
+            title: 'Your Favorite Products, Now at Special Discounted Prices!',
+             sortDescaption:'Welcome to chairy'
+        },
+        {
+            image: '/hero.png',
+            title: 'Get It Before It’s Gone! Limited Discounts Available Now!',
+            sortDescaption:'Welcome to chairy',
+            discount:'25'
+        },
+        {
+            image: '/hero.png',
+            title: 'Big Savings Await! Explore Today’s Best Discount Deals!',
+           sortDescaption:'Welcome to chairy',
+           discount:'20'
+        },
+    ]
     return (
         <div className=' relative bg-[#F0F2F3] z-0'>
             <Container>
@@ -19,20 +52,22 @@ const Hero = () => {
                         pagination={true}
                         slidesPerView={1}
                         spaceBetween={10}
-                        modules={[Navigation, Pagination]}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                          }}
+                        modules={[Navigation,Autoplay, Pagination]}
                         className="mySwiper hero h-auto md:h-[850px]"
                     >
-                        <SwiperSlide>
+                        {hero.map((item,idx)=><SwiperSlide key={idx}>
                             <div className='py-[82px] flex gap-6 flex-wrap flex-col md:flex-row items-center justify-between relative overflow-hidden h-auto md:h-[850px]'>
                                 <div className="content max-w-[631px] z-10 mx-auto">
-                                    <h3 className='text-[#272343] font-inter text-[14px] font-normal leading-[1] tracking-[0.12em] text-left uppercase'>Welcome to chairy</h3>
-                                    <h1 className='text-[#272343] font-inter text-[68px] font-bold leading-[1.1] tracking-normal text-left capitalize mt-2'>Best Furniture
-                                        Collection for your
-                                        interior.</h1>
+                                    <h3 className='text-[#272343] font-inter text-[14px] font-normal leading-[1] tracking-[0.12em] text-left uppercase'>{item.sortDescaption}</h3>
+                                    <h1 className='text-[#272343] font-inter text-[68px] font-bold leading-[1.1] tracking-normal text-left capitalize mt-2'>{item.title}</h1>
                                     <button className='bg-[#029FAE] text-white font-inter text-[16px] font-semibold leading-[1.1] tracking-normal text-center capitalize py-4 px-6 rounded-[8px] flex gap-6 items-baseline mt-6'>Shop Now <span><FaArrowRightLong /></span></button>
                                 </div>
                                 <div className="image z-10 w-full h-auto md:w-[475px] md:h-[649px] mb-6 mr-6 relative mx-auto">
-                                    <Image src='/hero.png'></Image>
+                                    <Image src={item.image}></Image>
                                     <div className='w-[100px] h-[100px] md:w-[140px] md:h-[125px] rounded-full bg-white text-[#272343] absolute right-0 top-0 flex justify-center items-center flex-col'>
                                         <span className='text-[#f05c52] font-inter text-[36px] font-bold leading-[1.1] tracking-normal text-center'> 45% </span>
                                         <p className='text-[#272343] font-inter text-[14px] font-medium leading-[1.1] tracking-[0.02em]'>Discount</p>
@@ -40,64 +75,9 @@ const Hero = () => {
                                 </div>
                                 <div className='md:w-[747px] sm:w-[476px] w-[322px] h-[322px] sm:h-[476px] md:h-[747px] rounded-full bg-[#E0E3E6] absolute top-1/2 -translate-y-1/2 md:translate-y-0 md:-top-[25%] md:right-0 z-0'></div>
                             </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='py-[82px] flex gap-6 flex-wrap flex-col md:flex-row items-center justify-between relative overflow-hidden h-auto md:h-[850px]'>
-                                <div className="content max-w-[631px] z-10 mx-auto">
-                                    <h3 className='text-[#272343] font-inter text-[14px] font-normal leading-[1] tracking-[0.12em] text-left uppercase'>Welcome to chairy</h3>
-                                    <h1 className='text-[#272343] font-inter text-[68px] font-bold leading-[1.1] tracking-normal text-left capitalize mt-2'>Best Furniture
-                                        Collection for your
-                                        interior.</h1>
-                                    <button className='bg-[#029FAE] text-white font-inter text-[16px] font-semibold leading-[1.1] tracking-normal text-center capitalize py-4 px-6 rounded-[8px] flex gap-6 items-baseline mt-6'>Shop Now <span><FaArrowRightLong /></span></button>
-                                </div>
-                                <div className="image z-10 w-full h-auto md:w-[475px] md:h-[649px] mb-6 mr-6 relative mx-auto">
-                                    <Image src='/hero.png'></Image>
-                                    <div className='w-[100px] h-[100px] md:w-[140px] md:h-[125px] rounded-full bg-white text-[#272343] absolute right-0 top-0 flex justify-center items-center flex-col'>
-                                        <span className='text-[#f05c52] font-inter text-[36px] font-bold leading-[1.1] tracking-normal text-center'> 45% </span>
-                                        <p className='text-[#272343] font-inter text-[14px] font-medium leading-[1.1] tracking-[0.02em]'>Discount</p>
-                                    </div>
-                                </div>
-                                <div className='md:w-[747px] sm:w-[476px] w-[322px] h-[322px] sm:h-[476px] md:h-[747px] rounded-full bg-[#E0E3E6] absolute top-1/2 -translate-y-1/2 md:translate-y-0 md:-top-[25%] md:right-0 z-0'></div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='py-[82px] flex gap-6 flex-wrap flex-col md:flex-row items-center justify-between relative overflow-hidden h-auto md:h-[850px]'>
-                                <div className="content max-w-[631px] z-10 mx-auto">
-                                    <h3 className='text-[#272343] font-inter text-[14px] font-normal leading-[1] tracking-[0.12em] text-left uppercase'>Welcome to chairy</h3>
-                                    <h1 className='text-[#272343] font-inter text-[68px] font-bold leading-[1.1] tracking-normal text-left capitalize mt-2'>Best Furniture
-                                        Collection for your
-                                        interior.</h1>
-                                    <button className='bg-[#029FAE] text-white font-inter text-[16px] font-semibold leading-[1.1] tracking-normal text-center capitalize py-4 px-6 rounded-[8px] flex gap-6 items-baseline mt-6'>Shop Now <span><FaArrowRightLong /></span></button>
-                                </div>
-                                <div className="image z-10 w-full h-auto md:w-[475px] md:h-[649px] mb-6 mr-6 relative mx-auto">
-                                    <Image src='/hero.png'></Image>
-                                    <div className='w-[100px] h-[100px] md:w-[140px] md:h-[125px] rounded-full bg-white text-[#272343] absolute right-0 top-0 flex justify-center items-center flex-col'>
-                                        <span className='text-[#f05c52] font-inter text-[36px] font-bold leading-[1.1] tracking-normal text-center'> 45% </span>
-                                        <p className='text-[#272343] font-inter text-[14px] font-medium leading-[1.1] tracking-[0.02em]'>Discount</p>
-                                    </div>
-                                </div>
-                                <div className='md:w-[747px] sm:w-[476px] w-[322px] h-[322px] sm:h-[476px] md:h-[747px] rounded-full bg-[#E0E3E6] absolute top-1/2 -translate-y-1/2 md:translate-y-0 md:-top-[25%] md:right-0 z-0'></div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='py-[82px] flex gap-6 flex-wrap flex-col md:flex-row items-center justify-between relative overflow-hidden h-auto md:h-[850px]'>
-                                <div className="content max-w-[631px] z-10 mx-auto">
-                                    <h3 className='text-[#272343] font-inter text-[14px] font-normal leading-[1] tracking-[0.12em] text-left uppercase'>Welcome to chairy</h3>
-                                    <h1 className='text-[#272343] font-inter text-[68px] font-bold leading-[1.1] tracking-normal text-left capitalize mt-2'>Best Furniture
-                                        Collection for your
-                                        interior.</h1>
-                                    <button className='bg-[#029FAE] text-white font-inter text-[16px] font-semibold leading-[1.1] tracking-normal text-center capitalize py-4 px-6 rounded-[8px] flex gap-6 items-baseline mt-6'>Shop Now <span><FaArrowRightLong /></span></button>
-                                </div>
-                                <div className="image z-10 w-full h-auto md:w-[475px] md:h-[649px] mb-6 mr-6 relative mx-auto">
-                                    <Image src='/hero.png'></Image>
-                                    <div className='w-[100px] h-[100px] md:w-[140px] md:h-[125px] rounded-full bg-white text-[#272343] absolute right-0 top-0 flex justify-center items-center flex-col'>
-                                        <span className='text-[#f05c52] font-inter text-[36px] font-bold leading-[1.1] tracking-normal text-center'> 45% </span>
-                                        <p className='text-[#272343] font-inter text-[14px] font-medium leading-[1.1] tracking-[0.02em]'>Discount</p>
-                                    </div>
-                                </div>
-                                <div className='md:w-[747px] sm:w-[476px] w-[322px] h-[322px] sm:h-[476px] md:h-[747px] rounded-full bg-[#E0E3E6] absolute top-1/2 -translate-y-1/2 md:translate-y-0 md:-top-[25%] md:right-0 z-0'></div>
-                            </div>
-                        </SwiperSlide>
+                        </SwiperSlide>)}
+                      
+                        
 
                     </Swiper>
 

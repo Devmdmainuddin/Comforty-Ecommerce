@@ -1,7 +1,11 @@
 
+import Categories from '../../components/Home/Categories';
 import Featured from '../../components/Home/Featured';
 import Hero from '../../components/Home/Hero';
+import OurProducts from '../../components/Home/OurProducts';
 import Partner from '../../components/Home/Partner';
+import RecentlyAdded from '../../components/Home/RecentlyAdded.JSX';
+import Testimonial from '../../components/Home/Testimonial';
 
 const Home = () => {
     return (
@@ -9,6 +13,10 @@ const Home = () => {
           <Hero/>
           <Partner></Partner>
           <Featured/>
+          <Categories/>
+          <OurProducts/>
+          <Testimonial/>
+          <RecentlyAdded/>
         </div>
     );
 };
