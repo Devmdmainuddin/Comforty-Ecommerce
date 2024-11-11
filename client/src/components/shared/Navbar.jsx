@@ -91,12 +91,12 @@ const Navbar = () => {
                                 </div>
 
                             </div>
-                            <div className="icon w-[44px] h-[44px] bg-white rounded-[8px] flex justify-center items-center">
-                                <span className="text-[#272343]"><FaRegHeart /></span>
+                            <div className="icon w-[44px] h-[44px] bg-white text-[#272343] hover:bg-[#029FAE] hover:text-white rounded-[8px] flex justify-center items-center transition-all duration-500">
+                                <span className=""><FaRegHeart /></span>
 
                             </div>
-                            <div onClick={() => setProOpen(!proOpen)} className="icon w-[44px] h-[44px] bg-white rounded-[8px] flex justify-center items-center">
-                                <span className="text-[#272343]"><FaRegUser /></span>
+                            <div onClick={() => setProOpen(!proOpen)} className="icon w-[44px] h-[44px] text-[#272343] bg-white hover:bg-[#029FAE] hover:text-white rounded-[8px] flex justify-center items-center transition-all duration-500">
+                                <span className=""><FaRegUser /></span>
                             </div>
                             {proOpen && (
                                 <div className=" absolute z-50 top-full right-3 translate-y-6">

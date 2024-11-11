@@ -5,7 +5,7 @@ import Container from "../../components/shared/Container";
 
 const Product = () => {
     const Featured = [
-        
+
         {
             title: "Library Stool Chair",
             image: "/card3.jpg",
@@ -56,14 +56,14 @@ const Product = () => {
         }
     ]
     return (
-        <div>
-            <Bredcumb/>
+        <div className="">
+            <Bredcumb />
             <Container>
-            <div className="flex flex-wrap justify-center  gap-6">
-            {Featured?.map((item, idx) => <FeaturedCard key={idx} item={item}></FeaturedCard>)}
-            </div>
+                <div className="flex flex-wrap justify-center pt-[85px] gap-6">
+                    {Featured?.map((item, idx) => <FeaturedCard key={idx} item={item}></FeaturedCard>)}
+                </div>
             </Container>
-            
+
         </div>
     );
 };
