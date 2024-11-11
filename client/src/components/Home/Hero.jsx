@@ -101,23 +101,45 @@ const Hero = () => {
 
                     </Swiper>
 
-                    <div className="hidden md:inline-block absolute left-1/2 bottom-0 transform translate-x-[-50%] translate-y-[50%] w-2/3  bg-white z-20 p-4 rounded-[10px] shadow-[rgba(100,_100,_111,_0.2)_0px_7px_29px_0px]" >
-                        <div className='flex flex-wrap items-center gap-6 justify-center'>
-                            <div className='w-[265px] text-[#505753] font-[Roboto] text-[14px] font-normal leading-[22px] tracking-[0.25px] p-4 border border-solid border-[#8FCCB3] outline-0 rounded-[5px]'>
+                    <div className=" absolute left-1/2 bottom-0 transform translate-x-[-50%] translate-y-[50%] w-full  bg-white z-20  rounded-[10px] shadow-[rgba(100,_100,_111,_0.2)_0px_7px_29px_0px]" >
+                        <div className='flex flex-wrap items-center gap-4 md:gap-[60px] justify-center p-6 lg:py-[50px] lg:px-[70px]'>
+                            <div className='flex gap-4'>
                               <div className="image w-[43px] h-[46px]">
                                 <Image src='/box.png'></Image>
                               </div>
                               <div className="content">
-                                <h2>Discount</h2>
-                                <p>Every week new sales</p>
+                                <h2 className='text-[#272343] font-inter text-[18px] font-medium leading-[1.1] tracking-normal text-left capitalize'>Discount</h2>
+                                <p className='text-[#9a9caa] font-inter text-[15px] font-normal leading-[1.1]'>Every week new sales</p>
                               </div>
                             </div>
-                            <div className='w-[265px] text-[#505753] font-[Roboto] text-[14px] font-normal leading-[22px] tracking-[0.25px] p-4 border border-solid border-[#8FCCB3] outline-0 rounded-[5px]'>
-                              
+                            <div className='flex gap-4'>
+                              <div className="image w-[43px] h-[46px]">
+                                <Image src='/box.png'></Image>
+                              </div>
+                              <div className="content">
+                                <h2 className='text-[#272343] font-inter text-[18px] font-medium leading-[1.1] tracking-normal text-left capitalize'>Discount</h2>
+                                <p className='text-[#9a9caa] font-inter text-[15px] font-normal leading-[1.1]'>Every week new sales</p>
+                              </div>
                             </div>
-                            <div className='w-[265px] text-[#505753] font-[Roboto] text-[14px] font-normal leading-[22px] tracking-[0.25px] p-4 border border-solid border-[#8FCCB3] outline-0 rounded-[5px]'>
-                              
+                            <div className='flex gap-4'>
+                              <div className="image w-[43px] h-[46px]">
+                                <Image src='/box.png'></Image>
+                              </div>
+                              <div className="content">
+                                <h2 className='text-[#272343] font-inter text-[18px] font-medium leading-[1.1] tracking-normal text-left capitalize'>Discount</h2>
+                                <p className='text-[#9a9caa] font-inter text-[15px] font-normal leading-[1.1]'>Every week new sales</p>
+                              </div>
                             </div>
+                            <div className='flex gap-4'>
+                              <div className="image w-[43px] h-[46px]">
+                                <Image src='/box.png'></Image>
+                              </div>
+                              <div className="content">
+                                <h2 className='text-[#272343] font-inter text-[18px] font-medium leading-[1.1] tracking-normal text-left capitalize'>Discount</h2>
+                                <p className='text-[#9a9caa] font-inter text-[15px] font-normal leading-[1.1]'>Every week new sales</p>
+                              </div>
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
